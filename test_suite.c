@@ -182,7 +182,8 @@ void load_last (hashmap *hash_map)
 
 /**
  * This function checks the hashmap_insert function of the hashmap library.
- * If hashmap_insert fails at some points, the functions exits with exit code 1.
+ * If hashmap_insert fails at some points, the functions exits with exit code
+ * 1.
  */
 void test_hash_map_insert(void)
 {
