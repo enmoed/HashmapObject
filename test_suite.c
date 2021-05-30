@@ -114,7 +114,7 @@ void loading_init_char_int (hashmap *hash_map)
       assert(hashmap_insert(hash_map, new_pair)==ONE);
       assert(hashmap_insert(hash_map, new_pair)==ZERO);
       pair_free((void **) &new_pair);
-      assert(hash_map->size == i);
+      assert((int) hash_map->size == i);
       assert(hash_map->capacity == HASH_MAP_INITIAL_CAP);
       assert(hash_map->hash_func == hash_char);
     }
@@ -372,7 +372,7 @@ void load_erase(hashmap *hash_map)
  */
 void erase_init_employee_string (hashmap *hash_map, int round)
 {
-  int cap = HASH_MAP_INITIAL_CAP;
+  size_t cap = HASH_MAP_INITIAL_CAP;
   if (round == 2)
     {
       cap *= HASH_MAP_GROWTH_FACTOR;
@@ -542,14 +542,4 @@ void test_hash_map_apply_if()
   assert(hashmap_apply_if(hash_map, is_abc, square_value) == 12);
   assert(hashmap_apply_if(hash_map, is_digit, double_value) == 0);
   hashmap_free(&hash_map);
-}
-
-int main()
-{
-  test_hash_map_insert();
-  test_hash_map_at();
-  test_hash_map_get_load_factor();
-  test_hash_map_apply_if();
-  test_hash_map_erase();
-  printf("%s", "good job");
 }

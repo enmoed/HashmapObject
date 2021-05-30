@@ -68,7 +68,7 @@ void vector_free(vector **p_vector)
  */
 void *vector_at(const vector *vector, size_t ind)
 {
-  if (vector == NULL || ind >= vector->size || ind < ZERO)
+  if (vector == NULL || ind >= vector->size)
     {
       return NULL;
     }
@@ -88,7 +88,7 @@ int vector_find(const vector *vector, const void *value)
     {
       return NEGATIVE;
     }
-  for (int i = ZERO; i<vector->size; i++)
+  for (int i = ZERO; i<(int)vector->size; i++)
     {
       if (vector->elem_cmp_func(value,vector->data+i))
         {
@@ -153,7 +153,7 @@ double vector_get_load_factor(const vector *vector)
  */
 int vector_erase(vector *vector, size_t ind)
 {
-  if (vector == NULL || ind < ZERO || ind >= vector->size)
+  if (vector == NULL || ind >= vector->size)
     {
       return FAIL;
     }
