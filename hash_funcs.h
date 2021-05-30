@@ -50,7 +50,7 @@ size_t hash_char(const void *elem){
 size_t hash_string(const void *elem){
   char *str = ((char *) elem);
   size_t hash = ZERO;
-  for (int i=ZERO; i<strlen(str); i++)
+  for (int i=ZERO; i<(int)strlen(str); i++)
     {
       hash += (size_t) str[i];
     }
