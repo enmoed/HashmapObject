@@ -501,8 +501,9 @@ void load_erase_get_load(hashmap *hash_map)
   pair_free((void **) &pr);
 }
 /**
- * This function checks the hashmap_get_load_factor function of the hashmap library.
- * If hashmap_get_load_factor fails at some points, the functions exits with exit code 1.
+ * This function checks the hashmap_get_load_factor function of the hashmap
+ * library. If hashmap_get_load_factor fails at some points, the functions
+ * exits with exit code 1.
  */
 void test_hash_map_get_load_factor(void)
 {
@@ -532,7 +533,8 @@ void apply_if_input_check (const hashmap *hash_map)
 
 /**
  * This function checks the HashMapGetApplyIf function of the hashmap library.
- * If HashMapGetApplyIf fails at some points, the functions exits with exit code 1.
+ * If HashMapGetApplyIf fails at some points, the functions exits with
+ * exit code 1.
  */
 void test_hash_map_apply_if()
 {

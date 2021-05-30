@@ -347,8 +347,8 @@ int hashmap_insert (hashmap *hash_map, const pair *in_pair)
  * The function returns the value associated with the given key.
  * @param hash_map a hash map.
  * @param key the key to be checked.
- * @return the value associated with key if exists, NULL otherwise (the value itself,
- * not a copy of it).
+ * @return the value associated with key if exists, NULL otherwise (the value
+ * itself, not a copy of it).
  */
 valueT hashmap_at (const hashmap *hash_map, const_keyT key)
 {
@@ -380,8 +380,8 @@ valueT hashmap_at (const hashmap *hash_map, const_keyT key)
  * The function erases the pair associated with key.
  * @param hash_map a hash map.
  * @param key a key of the pair to be erased.
- * @return 1 if the erasing was done successfully, 0 otherwise. (if key not in map,
- * considered fail).
+ * @return 1 if the erasing was done successfully, 0 otherwise. (if key not in
+ * map, considered fail).
  */
 int hashmap_erase (hashmap *hash_map, const_keyT key)
 {
@@ -430,15 +430,19 @@ double hashmap_get_load_factor (const hashmap *hash_map)
   return (double) hash_map->size / hash_map->capacity;
 }
 /**
- * This function receives a hashmap and 2 functions, the first checks a condition on the keys,
- * and the seconds apply some modification on the values. The function should apply the modification
+ * This function receives a hashmap and 2 functions, the first checks a
+ * condition on the keys, and the seconds apply some modification on the
+ * values. The function should apply the modification
  * only on the values that are associated with keys that meet the condition.
  *
- * Example: if the hashmap maps char->int, keyT_func checks if the char is a capital letter (A-Z),
- * and val_t_func multiples the number by 2, hashmap_apply_if will resize_hashmap the map:
- * {('C',2),('#',3),('X',5)}, to: {('C',4),('#',3),('X',10)}, and the return value will be 2.
+ * Example: if the hashmap maps char->int, keyT_func checks if the char is a
+ * capital letter (A-Z), and val_t_func multiples the number by 2,
+ * hashmap_apply_if will resize_hashmap the map:
+ * {('C',2),('#',3),('X',5)}, to: {('C',4),('#',3),('X',10)},
+ * and the return value will be 2.
  * @param hash_map a hashmap
- * @param keyT_func a function that checks a condition on keyT and return 1 if true, 0 else
+ * @param keyT_func a function that checks a condition on keyT and return 1
+ * if true, 0 else
  * @param valT_func a function that modifies valueT, in-place
  * @return number of changed values
  */

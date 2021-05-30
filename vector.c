@@ -8,9 +8,10 @@
 
 /**
  * Dynamically allocates a new vector.
- * @param elem_copy_func func which copies the element stored in the vector (returns
- * dynamically allocated copy).
- * @param elem_cmp_func func which is used to compare elements stored in the vector.
+ * @param elem_copy_func func which copies the element stored in the vector
+ * (returns dynamically allocated copy).
+ * @param elem_cmp_func func which is used to compare elements stored in the
+ * vector.
  * @param elem_free_func func which frees elements stored in the vector.
  * @return pointer to dynamically allocated vector.
  * @if_fail return NULL.
@@ -64,8 +65,8 @@ void vector_free (vector **p_vector)
  * Returns the element at the given index.
  * @param vector pointer to a vector.
  * @param ind the index of the element we want to get.
- * @return the element at the given index if exists (the element itself, not a copy of it),
- * NULL otherwise.
+ * @return the element at the given index if exists (the element itself, not a
+ * copy of it), NULL otherwise.
  */
 void *vector_at (const vector *vector, size_t ind)
 {
@@ -80,8 +81,8 @@ void *vector_at (const vector *vector, size_t ind)
  * Gets a value and checks if the value is in the vector.
  * @param vector a pointer to vector.
  * @param value the value to look for.
- * @return the index of the given value if it is in the vector ([0, vector_size - 1]).
- * Returns -1 if no such value in the vector.
+ * @return the index of the given value if it is in the vector
+ * ([0, vector_size - 1]). Returns -1 if no such value in the vector.
  */
 int vector_find (const vector *vector, const void *value)
 {
@@ -146,8 +147,9 @@ double vector_get_load_factor (const vector *vector)
 }
 
 /**
- * Removes the element at the given index from the vector. alters the indices of the remaining
- * elements so that there are no empty indices in the range [0, size-1] (inclusive).
+ * Removes the element at the given index from the vector. alters the indices
+ * of the remaining elements so that there are no empty indices in the range
+ * [0, size-1] (inclusive).
  * @param vector a pointer to vector.
  * @param ind the index of the element to be removed.
  * @return 1 if the removing has been done successfully, 0 otherwise.
